@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/foodfes.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="maindiv">
+
+        <!-- Header Section -->
+        <nav class="nav">
+            <a href="#" class="logo">
+                <img src="/img/logo1.png" class="logo" alt="" height="100px">
+            </a>
+
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+
+            <div class="nav__link hide">
+                <a href="/home">home</a>
+                <a href="/cities">City Guide</a>
+                <a href="/foodfes">Food Fest</a>
+                <a href="stories">Stories</a>
+                <a href="/logout">Log-Out</a>
+            </div>
+        </nav>
+        <!-- City Section -->
+        <h1 class="welcomeHeading" id="note">Food Festivals In India</h1>
+
+        <% festivalData.forEach(function(festival) { %>
+            <div class="container">
+                <p class="fesName">
+                    <%= festival.name %>
+                </p>
+                <img src="<%= festival.img %>" class="fesImg">
+                <p class="foodDescription">
+                    <%= festival.description %>
+                </p>
+                <p class="fesPlace">
+                    <b>Where :</b>
+                    <%= festival.location%>
+                </p>
+                <p class="fesTime">
+                    <b>When : </b>
+                    <%= festival.timing %>
+                </p>
+            </div>
+            <% }) %>
+
+
+                <% items.forEach(function(festival) { %>
+                    <div class="container">
+                        <p class="fesName">
+                            <%= festival.festivalName %>
+                        </p>
+                        <img src="data:image/<%=festival.img.contentType%>;base64,
+            <%=festival.img.data.toString('base64')%> " class="fesImg">
+                        <p class="foodDescription">
+                            <%= festival.festDescription %>
+                        </p>
+                        <p class="fesPlace">
+                            <b>Where :</b>
+                            <%= festival.festLocation%>
+                        </p>
+                        <p class="fesTime">
+                            <b>When : </b>
+                            <%= festival.fesTime %>
+                        </p>
+                    </div>
+                    <% }) %>
+
+    </div>
+
+    
+    <div class="secondMainDiv">
+        <h2 class="postHeading">Add Food Fest In India</h2>
+        <form action="/festivals" enctype="multipart/form-data" method="post">
+            <label for="">Festival Name</label>
+            <br>
+            <input type="text" name="festivalName" class="input1" required>
+            <br>
+            <label for="">Tell us about this Festival</label>
+            <br>
+            <input type="text" name="festDescription" required class="input1">
+            <br>
+            <label for="">Time</label>
+            <br>
+            <input type="text" name="festTime" class="input1" required>
+            <input type="file" name="image" id="imgInput" required>
+            <br>
+            <label for="">Vanue of Festival</label>
+            <br>
+            <input type="text" name="festLocation" class="input1" required>
+            <input type="submit" class="submitBtn">
+        </form>
+    </div>
+
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            navLink.classList.toggle('hide');
+            document.querySelector(".welcomeHeading").classList.toggle('note')
+        });
+    </script>
+</body>
+
+</html>

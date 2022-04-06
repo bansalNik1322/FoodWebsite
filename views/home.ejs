@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <nav class="nav">
+        <a href="#" class="logo">
+            <img src="/img/logo1.png" class="logo" alt="" height="100px">
+        </a>
+
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+
+        <div class="nav__link hide">
+            <a href="/home">home</a>
+            <a href="/cities">City Guide</a>
+            <a href="/foodfes">Food Fest</a>
+            <a href="/stories">Stories</a>
+            <a href="/logout">Log-Out</a>
+        </div>
+    </nav>
+    <!-- City Section -->
+    <div class="container">
+
+        <h1 class="welcomeHeading" id="note">Welcome To Nomad</h1>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Choose a City  &nbsp <i class="fa-solid fa-circle-chevron-down"></i></button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="/cities/delhi">Delhi</a>
+              <a href="/cities/mumbai">Mumbai</a>
+              <a href="/cities/chennai">Chennai</a>
+              <a href="/cities/goa">Goa</a>
+              <a href="/cities/kolkata">Kolkata</a>
+              <a href="/cities/hyderabad">Hyderabad</a>
+              <a href="/cities/lucknow">Lucknow</a>
+              <a href="/cities/jaipur">Jaipur</a>
+
+            </div>
+        </div>    
+
+    </div>
+
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            navLink.classList.toggle('hide');
+            document.querySelector(".welcomeHeading").classList.toggle('note')
+        });
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

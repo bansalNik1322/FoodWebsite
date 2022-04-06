@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/city.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            background-image: url("/img/chennai.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .paragraph {
+            margin-top: 25px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <nav class="nav">
+        <a href="#" class="logo">
+            <img src="/img/logo1.png" class="logo" alt="" height="100px">
+        </a>
+
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+
+        <div class="nav__link hide" >
+            <a href="/home">home</a>
+            <a href="/cities">City Guide</a>
+            <a href="/foodfes">Food Fest</a>
+            <a href="/stories">Stories</a>
+            <a href="/logout">Log-Out</a>
+        </div>
+    </nav>
+    <!-- City Section -->
+    <h1 class="welcomeHeading" id="note">Chennai, India</h1>
+    <p class="temp">
+        <%= temperature %>&#176 Celsius
+            <%= weatherDesc %>
+    </p>
+    <div class="container">
+        <p class="paragraph">Chennai, on the Bay of Bengal in eastern India, is the capital of the state of Tamil Nadu.
+            The city is home to Fort St. George, built in 1644 and now a museum showcasing the city's roots as a British
+            military garrison and East India Company trading
+            outpost, when it was called Madras.
+
+        </p>
+        <p class="paragraph">
+            Religious sites include Kapaleeshwarar Temple, adorned with carved and painted gods, and St. Mary's, a
+            17th-century Anglican church. </p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footerSection">
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/restaurent">Restaurents</a>
+        </div>
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/foods">Street Foods</a>
+        </div>
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/places">Places to Visit</a>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            navLink.classList.toggle('hide');
+            document.querySelector(".welcomeHeading").classList.toggle('note')
+        });
+    </script>
+</body>
+
+</html>

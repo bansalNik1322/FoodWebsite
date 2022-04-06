@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    margin-left: 20px;
+}
+
+.hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: black;
+}
+
+.nav__link {
+    position: fixed;
+    width: 100%;
+    top: 120px;
+}
+
+.note{
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 250px;
+}
+.nav__link a {
+    display: block;
+    text-align: center;
+    color: black;
+    font-weight: 100;
+    height: auto;
+    border-bottom: 1px outset black;
+    padding: 10px 0;
+}
+
+.nav__link a:hover {
+    background-color: rgb(250, 246, 246);
+}
+
+.hide {
+    display: none;
+}
+
+
+@media screen and (min-width: 1000px) {
+.nav__link {
+display: block;
+position: static;
+width: auto;
+margin-right: 20px;
+}
+
+.nav__link a {
+display: inline-block;
+padding: 15px 20px;
+border: none;
+}
+.nav__link a:hover{
+    background-color: rgb(250, 246, 246);
+}
+
+.hamburger {
+display: none;
+}
+}

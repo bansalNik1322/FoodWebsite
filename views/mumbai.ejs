@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/city.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            background-image: url("/img/mumbai.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <nav class="nav">
+        <a href="#" class="logo">
+            <img src="/img/logo1.png" class="logo" alt="" height="100px">
+        </a>
+
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+
+        <div class="nav__link hide">
+            <a href="/home">home</a>
+            <a href="/cities">City Guide</a>
+            <a href="/foodfes">Food Fest</a>
+            <a href="/stories">Stories</a>
+            <a href="/logout">Log-Out</a>
+
+        </div>
+    </nav>
+    <!-- City Section -->
+    <h1 class="welcomeHeading" id="note">Mumbai, India</h1>
+    <p class="temp">
+        <%= temperature %>&#176 Celsius
+            <%= weatherDesc %>
+    </p>
+    <div class="container">
+        <p class="paragraph">Mumbai (formerly called Bombay) is a densely populated city on India’s west coast. A financial center, it's India's largest city. On the Mumbai Harbour waterfront stands the iconic Gateway of India stone arch, built by the British Raj in 1924.
+            Offshore, nearby Elephanta Island holds ancient cave temples dedicated to the Hindu god Shiva. The city's also famous as the heart of the Bollywood film industry.</p>
+        <p class="paragraph">
+            A resident of Mumbai is called Mumbaikar in Marathi, in which the suffix kar means a resident of. The term had been in use for quite some time but it gained popularity after the official name change to Mumbai.[66] Older terms such as Bombayite are also
+            in use.
+        </p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footerSection">
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/restaurent">Restaurents</a>
+        </div>
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/foods">Street Foods</a>
+        </div>
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/places">Places to Visit</a>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            navLink.classList.toggle('hide');
+            document.querySelector(".welcomeHeading").classList.toggle('note')
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/city.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            background-image: url("/img/Hydrabad.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <nav class="nav">
+        <a href="#" class="logo">
+            <img src="/img/logo1.png" class="logo" alt="" height="100px">
+        </a>
+
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <div class="nav__link hide">
+            <a href="/home">home</a>
+            <a href="/cities">City Guide</a>
+            <a href="/foodfes">Food Fest</a>
+            <a href="/stories">Stories</a>
+            <a href="/logout">Log-Out</a>
+
+        </div>
+    </nav>
+    <!-- City Section -->
+    <h1 class="welcomeHeading" id="note">Hyderabad, India</h1>
+    <p class="temp">
+        <%= temperature %>&#176 Celsius
+            <%= weatherDesc %>
+    </p>
+    <div class="container">
+        <p class="paragraph">Hyderabad is the capital of southern India's Telangana state. A major center for the technology industry, it's home to many upscale restaurants and shops. Its historic sites include Golconda Fort, a former diamond-trading center that was once
+            the Qutb Shahi dynastic capital. The Charminar, a 16th-century mosque whose 4 arches support towering minarets, is an old city landmark near the long-standing Laad Bazaar
+        </p>
+        <p class="paragraph">
+            Hyderabadi cuisine comprises a broad repertoire of rice, wheat and meat dishes and the skilled use of various spices. Hyderabad is listed by UNESCO as a creative city of gastronomy. The Hyderabadi Biriyani and Hyderabadi Haleem with their blend of Mughlai
+            and Arab cuisine, carry the national Geographical Indications tag. Hyderabadi cuisine is influenced to some extent by French, but more by Arabic, Turkish, Iranian and native Telugu and Marathwada cuisines
+        </p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footerSection">
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/restaurent">Restaurents</a>
+        </div>
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/foods">Street Foods</a>
+        </div>
+        <div class="footerItem">
+            <a href="/cities/<%= city %>/places">Places to Visit</a>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            navLink.classList.toggle('hide');
+            document.querySelector(".welcomeHeading").classList.toggle('note')
+        });
+    </script>
+</body>
+
+</html>

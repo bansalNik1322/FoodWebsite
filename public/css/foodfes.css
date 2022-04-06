@@ -1,0 +1,177 @@
+.maindiv {
+    background-color: rgb(188, 158, 216);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100px;
+}
+body{
+    background-color: rgb(238, 230, 246);
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.brandImage {
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.navItem {
+    margin: 20px;
+    margin-top: 50px;
+    list-style: none;
+    float: right;
+}
+
+.welcomeHeading {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.navLink {
+    color: black;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+/* Main section */
+
+.container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.fesImg {
+    height: 200px;
+    width: 380px;
+    margin-left: 15px;
+    border-radius: 20px;
+}
+
+.fesName {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.foodDescription {
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 20px;
+}
+
+.fesPlace {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fesTime {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .fesImg {
+        width: 80%;
+    }
+    .fesName {
+        font-size: 25px;
+    }
+}
+
+
+/* Footer Section */
+
+.secondMainDiv {
+    margin-left: 15%;
+    
+}
+
+.secondMainDiv h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+.secondMainDiv form label {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    text-align: left;
+}
+
+.input1 {
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    height: 40px;
+    margin-right: 100px;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+
+
+
+
+.submitBtn {
+    font-size: 20px;
+    border: 2px solid white;
+    font-size: 20px;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: black;
+    transition: 1s;
+    color: white;
+    height: 40px;
+    width: 140PX;
+}
+
+#imgInput {
+    font-size: 20px;
+}
+
+input[type=file]::file-selector-button {
+    height: 40px;
+    width: 140px;
+    border: 2px solid white;
+    font-size: 20px;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: black;
+    transition: 1s;
+    color: white;
+}
+
+input[type=file]::file-selector-button:hover, .submitBtn:hover{
+    background-color: #343c3c;
+    border: 2px solid #687979;
+}
+
+@media screen and (max-width: 860px) {
+    .secondMainDiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .secondMainDiv form {
+        display: flex;
+        flex-direction: column;
+    }
+}

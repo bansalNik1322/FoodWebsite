@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cityGuide.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-image: url("/img/cityBG.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <nav class="nav">
+        <a href="#" class="logo">
+            <img src="/img/logo1.png" class="logo" alt="" height="100px">
+        </a>
+
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+
+        <div class="nav__link hide">
+            <a href="/home">home</a>
+            <a href="/cities">City Guide</a>
+            <a href="/foodfes">Food Fest</a>
+            <a href="/stories">Stories</a>
+            <a href="/logout">Log-Out</a>
+        </div>
+    </nav>
+    <!-- City Section -->
+    <h1 class="welcomeHeading" id="note">City Guide</h1>
+
+    <div class="grid-container">
+        <div class="item1">
+            <a href="/cities/delhi"><img src="/img/delhi.jpeg" class="cityImg" alt=""></a>
+            <p class="centered">Delhi</p>
+        </div>
+        <div class="item1">
+            <a href="/cities/mumbai"><img src="/img/mumbai.jpeg" class="cityImg" alt=""></a>
+            <p class="centered">Mumbai</p>
+        </div>
+        <div class="item1">
+            <a href="/cities/jaipur"><img src="/img/jaipur.jpeg" class="cityImg" alt=""></a>
+            <p class="centered">Jaipur</p>
+        </div>
+        <div class="item1">
+            <a href="/cities/goa"><img src="/img/goa.jpeg" class="cityImg" alt=""></a>
+            <p class="centered">Goa</p>
+        </div>
+        <div class="item1">
+            <a href="/cities/hyderabad"><img src="/img/Hydrabad.jpeg" class="cityImg" alt=""></a>
+            <p class="centered">HYDRABAD</p>
+        </div>
+        <div class="item1">
+            <a href="/cities/lucknow"><img src="/img/lucknow.jpeg" class="cityImg" alt=""></a>
+            <p class="centered">LUCKNOW</p>
+        </div>
+        <div class="item1">
+            <a href="/cities/chennai"><img src="/img/chennai.jpeg" class="cityImg" alt=""></a>
+            <p class="centered">Chennai</p>
+        </div>
+        <div class="item1">
+            <a href="/cities/kolkata"><img src="/img/KOLKATA.jpeg" class="cityImg" alt=""></a>
+            <p class="centered">kolkata</p>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            navLink.classList.toggle('hide');
+            document.querySelector(".welcomeHeading").classList.toggle('note')
+        });
+    </script>
+</body>
+
+</html>

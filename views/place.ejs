@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/place.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            background-image: url("<%= img %>");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="container">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <img src="/img/logo1.png" class="logo" alt="" height="100px">
+            </a>
+
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+
+            <div class="nav__link hide">
+                <a href="/home">home</a>
+                <a href="/cities">City Guide</a>
+                <a href="/foodfes">Food Fest</a>
+                <a href="/stories">Stories</a>
+                <a href="/logout">Log-Out</a>
+            </div>
+        </nav>
+        <!-- City Section -->
+        <h1 class="welcomeHeading" id="note">Places to Visit</h1>
+
+        <div class="grid-container">
+            <% placeData.forEach(function(place) { %>
+                <div class="item1">
+                    <img src="<%= place.img %>" class="cityImg ">
+                    <p class="resName">
+                        <%= place.name %>
+                    </p>
+                    <hr>
+                    <p class="resType">
+                        <%= place.location %>
+                    </p>
+                </div>
+                <% }) %>
+
+
+                    <% items.forEach(function(place) { %>
+                        <div class="item1">
+                            <img src="data:image/<%=place.img.contentType%>;base64,
+                <%=place.img.data.toString('base64')%> " class="cityImg ">
+                            <p class="resName">
+                                <%= place.placeName %>
+                            </p>
+                            <hr>
+                            <p class="resType">
+                                <%= place.location %>
+                            </p>
+                            <hr>
+                        </div>
+                        <% }) %>
+
+        </div>
+    </div>
+
+
+    <div class="secondMainDiv">
+        <h2 class="postHeading">Add your Favourite Place</h2>
+        <form action="/cities/<%= city %>/places" method="POST" enctype="multipart/form-data">
+            <label for="">Place Name</label>
+            <br>
+            <input class="input1" type="text" name="placeName" required>
+            <input type="file" name="image" id="imgInput" required>
+            <br>
+            <label for="">Location</label>
+            <br>
+            <input type="text" class="input1" name="location" required>
+            <input type="submit" class="submitBtn">
+            <br>
+        </form>
+    </div>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            navLink.classList.toggle('hide');
+            document.querySelector(".welcomeHeading").classList.toggle('note')
+        });
+    </script>
+</body>
+
+</html>

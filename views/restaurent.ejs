@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/restaurent.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .container {
+            background-image: url("<%= img %>");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="container">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <img src="/img/logo1.png" class="logo" alt="" height="100px">
+            </a>
+
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+
+            <div class="nav__link hide">
+                <a href="/home">home</a>
+                <a href="/cities">City Guide</a>
+                <a href="/foodfes">Food Fest</a>
+                <a href="/stories">Stories</a>
+                <a href="/logout">Log-Out</a>
+            </div>
+        </nav>
+        <!-- City Section -->
+        <h1 class="welcomeHeading" id="note">Restaurent</h1>
+
+        <div class="grid-container">
+            <% restaurentData.forEach(function(restaurent) { %>
+                <div class="item1">
+                    <img src="  <%= restaurent.img %>" class="cityImg ">
+                    <p class="resName">
+                        <%= restaurent.name %>
+                    </p>
+                    <hr>
+                    <p class="resType">
+                        <%= restaurent.cuisine %>
+                    </p>
+                    <hr>
+                    <p class="resDesc">
+                        <%= restaurent.location %>
+                    </p>
+                </div>
+                <% }) %>
+
+
+
+                    <% items.forEach(function(restaurent) { %>
+                        <div class="item1">
+                            <img src="data:image/<%=restaurent.img.contentType%>;base64,
+                <%=restaurent.img.data.toString('base64')%> " class="cityImg ">
+                            <p class="resName">
+                                <%= restaurent.name %>
+                            </p>
+                            <hr>
+                            <p class="resType">
+                                <%= restaurent.foodType %>
+                            </p>
+                            <hr>
+                            <p class="resDesc">
+                                <%= restaurent.location %>
+                            </p>
+                        </div>
+                        <% }) %>
+
+        </div>
+
+
+        <div class="secondMainDiv">
+            <h2 class="postHeading">Add your favourite Restaurent</h2>
+            <form action="/cities/<%= city %>/restaurent" method="POST" enctype="multipart/form-data">
+                <label for="">Restaurent Name</label>
+                <br>
+                <input class="input1" type="text" name="restaurentName" required>
+                <br>
+                <label for="">Cuisine</label>
+                <br>
+                <input type="text" class="input1" name="foodType" required>
+                <input type="file" name="image" id="imgInput" required>
+                <br>
+                <label for="">Location</label>
+                <br>
+                <input type="text" name="location" class="input1" required>
+                <input type="submit" class="submitBtn">
+            </form>
+        </div>
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navLink = document.querySelector('.nav__link');
+
+            hamburger.addEventListener('click', () => {
+                navLink.classList.toggle('hide');
+                document.querySelector(".welcomeHeading").classList.toggle('note')
+            });
+        </script>
+</body>
+
+</html>

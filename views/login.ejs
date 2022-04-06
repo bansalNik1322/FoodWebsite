@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/img/loginLogo.svg" alt="" height="300px" style="color : black;">
+        </div>
+        <div class="formContainer">
+            <form action="/login" method="POST">
+                <h1><b>Welcome to Nomad</b></h1>
+                <br><br><br><br>
+                <label for="username" class="labels">User Name</label>
+                <br><br><br>
+                <input type="text" name="userName" class="inputs" required>
+                <br><br><br>
+                <label for="passwrd" class="labels">Password</label>
+                <br><br><br>
+                <input type="password" name="password" required class="inputs">
+                <br><br><br><br>
+                <br><br>
+                <input type="submit" value="Login" id="login">
+                <br><br>
+                <a href="/register">Don't have an Account ? Create One!</a>
+            </form>
+        </div>
+    </div>
+
+
+</html>
+</body>
